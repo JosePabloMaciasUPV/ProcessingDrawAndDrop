@@ -30,9 +30,10 @@ void draw(){
 }
 
 void mousePressed(){
-   for(int i=0; i<lista.size()  ;i++){
-     tmp=lista.get(i);
+   for(int i=numeroElementos-1; i>=0 ;i--){
+       tmp=lista.get(i);
           if (tmp.isAdentro(mouseX, mouseY) ) {
+             seleccionadoIndice=i;
              IdSeleccionado_Etiqueta += tmp.id;
              tmp.mover=true;
              break;
@@ -40,15 +41,16 @@ void mousePressed(){
    }
 }
 void mouseDragged(){
-  
-     tmp.x=mouseX;
-     tmp.y=mouseY;
-     System.out.println("");
-  
+  if(seleccionadoIndice!=-1){
+    tmp=lista.get(seleccionadoIndice);
+    tmp.x=mouseX;
+    tmp.y=mouseY;
+  }
 }
 
 void mouseReleased(){
    IdSeleccionado_Etiqueta = "";
+   seleccionadoIndice=-1;
    tmp.mover = false;
    tmp = null;
 }
