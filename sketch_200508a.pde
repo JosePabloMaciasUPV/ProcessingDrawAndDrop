@@ -3,7 +3,7 @@ Circulo tmp;
 List <Circulo>lista; // <> Operador Diamante
 String IdSeleccionado_Etiqueta="";
 float x,y;
-int numeroElementos = 10; // numero de circulos en la lista
+int numeroElementos = 30; // numero de circulos en la lista
 int seleccionadoIndice=-1;
 void setup(){
     size(400,300);
